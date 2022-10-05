@@ -1,0 +1,106 @@
+---
+title: "GitHub Actions & CI for unit tests"
+knit: (function(input_file, encoding) {
+  out_dir <- 'docs';
+  rmarkdown::render(input_file,
+  encoding=encoding,
+ output_file=file.path(dirname(input_file), out_dir, 'index.html'))})
+author: "Fonti Kar"
+date: "05/10/2022"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    code_folding: show
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r BTS, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE,
+                      message = FALSE,
+                      error = FALSE, 
+                      eval = FALSE)
+
+pacman::p_load(dplyr)
+```
+
+In this part of the workshop we will XX
+
+The below tools have been developed by XX and 
+
+I recommend checking out XX
+
+If you want to know the details of each GHA workflow, I recommend XX 
+
+### The mise en place 👩🍳
+
+```{r Prep}
+#install.packages("devtools")
+
+library(devtools) #Will load usesthis and roxgen2 as well
+```
+
+### Git set go!!!
+
+Before we can get started, we have to make sure we have our Git Personal Access Token (PAT) set up correctly! Highly recommend [this section](https://happygitwithr.com/https-pat.html) of the Happy Git and GitHub for the useR!
+
+Let's first check if we have git set up correctly
+
+```{r sanity check}
+git_sitrep() # git situation report
+```
+
+Under the bold heading **GitHub**, we want to see "• Personal access token for 'https://github.com': '<discovered>'"
+
+If you don't see this, then follow the next steps to get yourself a PAT. I recommend
+starting with `?usethis::gh_token_help()`. If you want more details, try the [tl;dr section](https://happygitwithr.com/https-pat.html#tldr) of the Happy Git and GitHub for the useR book and the subsequent chapters
+
+```{r good help and create}
+?usethis::gh_token_help()
+usethis::create_github_token()
+```
+
+If `usethis::create_github_token()` fails, try this link to create a PAT manually on the [GitHub Website](https://github.com/settings/tokens/new?scopes=repo,user,gist,workflow&description=R:GITHUB_PAT)
+
+Once you have been given your PAT, save this in your password manager! This is your unique identity key to GitHub's API. Now we will register your PAT using
+
+```{r gitset}
+#install.packages("gitcreds")
+gitcreds::gitcreds_set()
+```
+
+Just for peace of mind... lets check it again!
+
+```{r check twice}
+git_sitrep() # git situation report
+```
+
+### Our first GitHub Action!
+
+**{usethis}** will be your portal the most commonly use GHA templates! You can find all source code, documentation, meta-data for each workflow at the [r-lib/actions repository](https://github.com/r-lib/actions/graphs/contributors). 
+
+You can find a list of example templates in  [actions/examples](https://github.com/r-lib/actions/tree/v2/examples) 
+
+A massive shout out to the contributors and maintainers! They truly make our lives easier! 
+
+Lets try setting up a GHA to run R-CMD-CHECK for one operating system (by default its ubuntu), on the latest R release version 
+
+```{r}
+use_github_action_check_release()
+```
+
+Add the badge to README.Rmd if you like! Who doesn't like badges! Remember to knit to rengenerate the README.md! 
+
+Now commit these changes and push and see the magic work! 
+
+### Test coverage
+
+
+```{r}
+usethis::use_github_action("test-coverage")
+```
+
+
