@@ -198,7 +198,7 @@ The choice is up to you and the needs of your package. For example, `lint` one l
 
 💡 TIP: If you are using RStudio IDE, you can use start writing `use_github_action_`  in your R console to see what type of GHA templates are already built in `{usethis}`
 
-### Cover your bases 🪤
+### Cover your bases 🪤 with code coverage
 
 Let's set up `test-coverage` together. This workflow uses [codecov.io](https://about.codecov.io/) to compute how well spread your unit tests are across your package functions. Generally speaking, a high code coverage indicates your package is robust to bugs, a value of ~70-80% is thought to be a good threshold!
 
