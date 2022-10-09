@@ -146,7 +146,7 @@ Lets take a look at the `R-CMD-check.yml`:
 
 ### Different OS and R versions 📚
 
-What if we want to make sure your package can pass `R-CMD-CHECK` on Windows, macOS and Linux? Farewell virtual machines! You can do this all in one GHA workflow! 
+What if we want to make sure your package can pass `R-CMD-CHECK` on Windows, macOS and Linux? Farewell virtual machines! You can do this all in one GHA workflow, although it will take longer compared to a single OS workflow! ⏰
 
 Go ahead and run:
 
