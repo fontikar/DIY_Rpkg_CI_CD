@@ -83,6 +83,8 @@ If you don't see this ⚠️ Follow the next steps to git sorted 😉
 
 git installation is  via the shell terminal and is OS dependent, so take a look at [this chapter](https://happygitwithr.com/install-git.html#install-git){target="_blank"} of Happy git with R to get started!
 
+💻 For a macOS user: git is usually installed along with ['Command Line Developer Tools'](https://www.embarcadero.com/starthere/xe5/mobdevsetup/ios/en/installing_the_commandline_tools.html) via Xcode when you first open RStudio 
+
 #### Create a PAT token! 🎟
 I recommend having a good read of `?usethis::gh_token_help()` and follow the instructions there
 
