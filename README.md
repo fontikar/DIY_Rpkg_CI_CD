@@ -1,5 +1,5 @@
 # DIY R package workshop - Part 2
-Workshop materials for implementing your GitHub Action and pkgdown website for your R package 📦👩‍💻
+Workshop materials for implementing continuous Integration with GitHub Action for your R package 📦👩‍💻
 
 ![Prominent Action figures](https://media3.giphy.com/media/N97kHQgG33rUI/giphy.gif)
 
